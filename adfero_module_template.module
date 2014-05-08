@@ -1,0 +1,28 @@
+<?php
+
+function adfero_module_template_permission() {
+  $items = array();
+
+  $items['administer adfero module'] = array(
+    'title' => t('Administer Adfero Sample Module'),
+    'description' => t('Perform maintenance tasks for Adfero Sample Module.')
+  );
+
+  return $items;
+}
+
+function adfero_module_template_menu() {
+  $items = array();
+
+  $items['admin/config/administration/adfero-template'] = array(
+    'title' => 'Adfero Module Template',
+    'description' => 'Provide a brief sentence on functionality.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('adfero_module_template_settings_form'),
+    'access arguments' => array('administer adfero module'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'adfero_module_template.admin.inc',
+  );
+
+  return $items;
+}

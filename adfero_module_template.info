@@ -1,0 +1,23 @@
+name = "Adfero Module Template"
+description = "Provide a brief sentence on functionality."
+package = Adfero
+core = 7.x
+version = 1.0
+
+;This puts a config link on the modules page. The path must also be declared in hook_menu.
+configure = admin/config/administration/adfero-template
+
+;Keep all test classes under the tests/ directory
+files[] = tests/AdferoModuleTemplateTestCase.test
+
+;Keep all custom classes under the classes/ directory
+files[] = classes/AdferoModuleTemplateClass.inc
+
+;Keep all stylesheets under the css/ directory and try to keep CSS loading here as opposed to drupal_add_css
+stylesheets[all][] = css/adfero_module_template.css
+
+;Keep all scripts under the js/ directory and try to keep JavaScript loading here as opposed to drupal_add_js
+scripts[] = js/adfero_module_template.js
+
+;Always list dependencies to prevent undefined function exceptions
+dependencies[] = node

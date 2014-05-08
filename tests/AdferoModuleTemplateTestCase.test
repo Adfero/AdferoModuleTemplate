@@ -1,0 +1,29 @@
+<?php
+
+class AdferoModuleTemplateTestCase extends DrupalWebTestCase {
+  protected $profile = 'mycareerva';
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Adfero Module Template Test',
+      'description' => 'Provide a description of testing',
+      'group' => 'Adfero',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('adfero_module_template');
+  }
+
+  public function testAdferoModuleClassInstantiate() {
+    $obj = new AdferoModuleTemplateClass();
+    $this->assertEqual($obj->getVariableA(),'preloaded','The initial value for AdferoModuleTemplateClass should be preloaded.');
+  }
+
+  public function testAdferoModuleClassUpdate() {
+    $obj = new AdferoModuleTemplateClass();
+    $obj->setVariableA('new_val');
+    $this->assertEqual($obj->getVariableA(),'new_val','The object updates properly.');
+  }
+
+}
